@@ -173,3 +173,8 @@
   outline: 2px solid var(--color-brand);
   outline-offset: 3px;
 }
+
+a.game-card__action {
+  display: block;
+  text-align: center;
+}

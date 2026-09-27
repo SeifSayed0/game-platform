@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import type { GameCardData } from '../types'
 import './GameCard.css'
 
@@ -8,26 +9,9 @@ type GameCardProps = {
 function GameCard({ game }: GameCardProps) {
   const isAvailable = game.status === 'available'
 
-  const handleOpen = () => {
-    if (!isAvailable) {
-      return
-    }
-
-    console.log(`Opening game: ${game.id}`)
-  }
-
   return (
     <article
       className={`game-card ${isAvailable ? 'game-card--clickable' : ''}`}
-      onClick={handleOpen}
-      role={isAvailable ? 'button' : undefined}
-      tabIndex={isAvailable ? 0 : undefined}
-      onKeyDown={(event) => {
-        if (isAvailable && (event.key === 'Enter' || event.key === ' ')) {
-          event.preventDefault()
-          handleOpen()
-        }
-      }}
     >
       <div className={`game-card__cover game-card__cover--${game.cover}`}>
         <span className="game-card__cover-label">
@@ -54,17 +38,22 @@ function GameCard({ game }: GameCardProps) {
           {game.description}
         </p>
 
-        <button
-          className="game-card__action"
-          type="button"
-          disabled={!isAvailable}
-          onClick={(event) => {
-            event.stopPropagation()
-            handleOpen()
-          }}
-        >
-          {isAvailable ? 'ابدأ اللعب' : 'قريبًا'}
-        </button>
+        {isAvailable ? (
+          <Link
+            className="game-card__action"
+            to={`/games/${game.id}`}
+          >
+            عرض اللعبة
+          </Link>
+        ) : (
+          <button
+            className="game-card__action"
+            type="button"
+            disabled
+          >
+            قريبًا
+          </button>
+        )}
       </div>
     </article>
   )
