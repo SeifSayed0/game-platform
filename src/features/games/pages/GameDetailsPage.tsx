@@ -58,9 +58,12 @@ function GameDetailsPage() {
         </p>
 
         {game.status === 'available' ? (
-          <button className="game-details__start" type="button">
+          <Link
+            className="game-details__start"
+            to={`/games/${game.id}/play`}
+          >
             ابدأ اللعبة
-          </button>
+          </Link>
         ) : (
           <button
             className="game-details__start game-details__start--disabled"

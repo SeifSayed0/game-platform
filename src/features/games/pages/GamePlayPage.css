@@ -1,0 +1,38 @@
+.game-play {
+  min-height: 70vh;
+}
+
+.game-play__not-found {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.game-play__not-found span {
+  color: #9b8cff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.game-play__not-found h1 {
+  margin: 12px 0;
+  color: #f5f5f7;
+  font-size: clamp(32px, 6vw, 52px);
+}
+
+.game-play__not-found p {
+  margin: 0 0 24px;
+  color: #a5a5ad;
+  line-height: 1.8;
+}
+
+.game-play__not-found a {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #5b4bb0;
+  color: #fff;
+  text-decoration: none;
+}
