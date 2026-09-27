@@ -10,5 +10,4 @@ export const theLastChoice: GameDefinition = {
   duration: '5–10 دقائق',
   cover: 'the-last-choice',
   status: 'coming-soon',
-  launch: '/games/the-last-choice',
 }

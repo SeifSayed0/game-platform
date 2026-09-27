@@ -10,5 +10,4 @@ export const case017: GameDefinition = {
   duration: '10–20 دقيقة',
   cover: 'case-017',
   status: 'available',
-  launch: '/games/case-017',
 }

@@ -1,4 +1,4 @@
-import type { GamePlayerMode } from '../../features/games/types'
+export type GamePlayerMode = 'solo' | 'duo' | 'solo-duo'
 
 export type GameDefinition = {
   id: string
@@ -10,5 +10,4 @@ export type GameDefinition = {
   duration: string
   cover: string
   status: 'available' | 'coming-soon'
-  launch: string
 }

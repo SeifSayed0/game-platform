@@ -1,12 +1,13 @@
-export type GamePlayerMode = 'solo' | 'duo' | 'solo-duo'
+import type { GameDefinition } from '../../engine/GameRegistry/types'
 
-export type GameCardData = {
-  id: string
-  title: string
-  description: string
-  category: string
-  players: GamePlayerMode
-  duration: string
-  cover: string
-  status?: 'available' | 'coming-soon'
-}
+export type GameCardData = Pick<
+  GameDefinition,
+  | 'id'
+  | 'title'
+  | 'description'
+  | 'category'
+  | 'players'
+  | 'duration'
+  | 'cover'
+  | 'status'
+>

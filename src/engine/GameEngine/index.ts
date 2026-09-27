@@ -4,3 +4,7 @@ export type {
   GamePlayer,
   GameSessionState,
 } from './types'
+export type {
+  GameModule,
+  GameResult,
+} from './GameModule'

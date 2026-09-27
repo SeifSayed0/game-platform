@@ -10,5 +10,4 @@ export const unknownSignal: GameDefinition = {
   duration: '10–15 دقيقة',
   cover: 'unknown-signal',
   status: 'coming-soon',
-  launch: '/games/unknown-signal',
 }
