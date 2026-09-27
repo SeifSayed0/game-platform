@@ -1,0 +1,129 @@
+.game-catalog {
+  width: 100%;
+}
+
+.game-catalog__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-8);
+  margin-bottom: var(--space-10);
+}
+
+.game-catalog__eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+
+  color: var(--color-brand);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.game-catalog__title {
+  max-width: 700px;
+  margin: 0;
+
+  color: var(--color-text);
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.game-catalog__description {
+  max-width: 560px;
+  margin: var(--space-4) 0 0;
+
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.game-catalog__filters {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+}
+
+.game-catalog__filter {
+  padding: 8px 13px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--color-text-muted);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.game-catalog__filter:hover {
+  color: var(--color-text);
+}
+
+.game-catalog__filter--active {
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.18);
+}
+
+.game-catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .game-catalog__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .game-catalog__filters {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .game-catalog__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .game-catalog__header {
+    margin-bottom: var(--space-8);
+  }
+
+  .game-catalog__title {
+    font-size: 34px;
+  }
+
+  .game-catalog__description {
+    font-size: 15px;
+  }
+
+  .game-catalog__filters {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .game-catalog__filter {
+    flex-shrink: 0;
+  }
+
+  .game-catalog__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}

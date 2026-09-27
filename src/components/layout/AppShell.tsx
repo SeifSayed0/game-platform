@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Navbar from './Navbar'
 
 type AppShellProps = {
   children: ReactNode
@@ -7,7 +8,11 @@ type AppShellProps = {
 function AppShell({ children }: AppShellProps) {
   return (
     <div className="app-shell">
-      {children}
+      <Navbar />
+
+      <main className="app-shell__content">
+        {children}
+      </main>
     </div>
   )
 }

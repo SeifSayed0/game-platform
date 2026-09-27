@@ -1,12 +1,10 @@
 import AppShell from './components/layout/AppShell'
+import GameCatalog from './features/games/components/GameCatalog'
 
 function App() {
   return (
     <AppShell>
-      <main>
-        <h1>Game Platform</h1>
-        <p>Your games, your sessions, your progress.</p>
-      </main>
+      <GameCatalog />
     </AppShell>
   )
 }

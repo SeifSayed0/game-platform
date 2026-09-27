@@ -3,29 +3,45 @@
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 
-  color: #f5f7fa;
-  background: #0b0d10;
+  color: #f5f5f7;
+  background: #0a0a0c;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --color-bg: #0b0d10;
-  --color-surface: #12161c;
-  --color-surface-raised: #181d24;
-  --color-border: #252b34;
+  /* Brand */
+  --color-brand: #8b7cff;
+  --color-brand-hover: #9b8eff;
+  --color-brand-soft: rgba(139, 124, 255, 0.12);
 
-  --color-text: #f5f7fa;
-  --color-text-muted: #9aa3af;
-  --color-text-subtle: #68717e;
+  /* Backgrounds */
+  --color-bg: #0a0a0c;
+  --color-surface: #111114;
+  --color-surface-raised: #18181d;
+  --color-surface-hover: #1d1d23;
 
-  --color-primary: #7c5cff;
-  --color-primary-hover: #8d70ff;
+  /* Borders */
+  --color-border: #25252c;
+  --color-border-hover: #34343e;
 
+  /* Text */
+  --color-text: #f5f5f7;
+  --color-text-muted: #a1a1aa;
+  --color-text-subtle: #71717a;
+
+  /* Status */
+  --color-success: #5ee6a8;
+  --color-warning: #f2c76e;
+  --color-danger: #f07178;
+
+  /* Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
+  --radius-xl: 24px;
 
+  /* Spacing */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -35,8 +51,17 @@
   --space-8: 32px;
   --space-10: 40px;
   --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
 
+  /* Layout */
   --content-width: 1200px;
+  --content-width-wide: 1400px;
+
+  /* Motion */
+  --transition-fast: 140ms ease;
+  --transition-normal: 220ms ease;
+  --transition-slow: 360ms ease;
 }
 
 * {
@@ -46,6 +71,7 @@
 html {
   min-width: 320px;
   background: var(--color-bg);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -79,4 +105,36 @@ img {
 
 #root {
   min-height: 100svh;
+}
+
+.app-shell {
+  min-height: 100svh;
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(139, 124, 255, 0.07),
+      transparent 42%
+    ),
+    var(--color-bg);
+}
+
+.app-shell__content {
+  width: min(100% - 32px, var(--content-width));
+  margin: 0 auto;
+  padding: var(--space-12) 0;
+}
+
+@media (max-width: 640px) {
+  .app-shell__content {
+    width: min(100% - 24px, var(--content-width));
+    padding: var(--space-8) 0;
+  }
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  text-align: right;
 }
